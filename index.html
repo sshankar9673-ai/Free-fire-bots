@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+  
+</body>
+
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>FFGLORY V500K | ULTRA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Rajdhani:wght@600;700&display=swap');
+        
+        body { background: #000; color: #fff; font-family: 'Rajdhani', sans-serif; margin: 0; overflow: hidden; }
+        .ultra-container { 
+            width: 100%; max-width: 420px; margin: auto; height: 100vh; 
+            background: radial-gradient(circle at bottom, #1a0b2e 0%, #000 100%); 
+            position: relative; display: flex; flex-direction: column; border: 1px solid #3b0066; 
+        }
+        .orbitron { font-family: 'Orbitron'; }
+
+        /* Premium Selection Styling */
+        .select-pro {
+            background: #0a0a0c; border: 1px solid #4b0082; padding: 12px;
+            border-radius: 12px; width: 100%; color: #eab308; font-family: 'Orbitron';
+            font-size: 11px; outline: none; margin-bottom: 15px; appearance: none;
+            text-align: center; cursor: pointer; box-shadow: inset 0 0 10px rgba(75,0,130,0.3);
+        }
+
+        .input-ultra {
+            background: rgba(0,0,0,0.6); border: 1px solid #4b0082; padding: 15px;
+            border-radius: 15px; width: 100%; color: #fff; text-align: center;
+            font-family: 'Orbitron'; outline: none; margin-bottom: 10px;
+        }
+
+        .bot-card-500k {
+            background: rgba(255,255,255,0.02); border: 1px solid rgba(75, 0, 130, 0.3);
+            border-radius: 20px; padding: 15px; margin-bottom: 12px;
+            border-right: 4px solid #eab308;
+        }
+
+        .btn-500k {
+            background: linear-gradient(90deg, #4b0082, #8a2be2);
+            color: #fff; font-family: 'Orbitron'; font-weight: 900;
+            padding: 20px; border-radius: 20px; width: 100%; font-size: 16px;
+            letter-spacing: 2px; text-transform: uppercase; border: none;
+            box-shadow: 0 0 30px rgba(138, 43, 226, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ultra-container">
+        
+        <div id="authLayer" class="absolute inset-0 bg-black z-[9999] flex flex-col justify-center p-10">
+            <h1 class="orbitron text-center text-purple-500 text-4xl mb-10 font-black italic">V500K</h1>
+            <input type="password" id="adminPass" placeholder="ENTER MASTER KEY" class="input-ultra border-purple-500/50">
+            <button onclick="unlock()" class="btn-500k">ACTIVATE ULTRA CORE</button>
+        </div>
+
+        <div id="dashboard" class="hidden flex flex-col h-full">
+            <div class="p-5 border-b border-purple-900/30 flex justify-between items-center bg-black/40">
+                <h2 class="orbitron text-sm font-black text-purple-400 italic">FFGLORY_<span class="text-white">500K</span></h2>
+                <div class="h-2 w-2 rounded-full bg-purple-500 animate-pulse shadow-[0_0_10px_#8a2be2]"></div>
+            </div>
+
+            <div class="flex-1 overflow-y-auto p-5 pb-40">
+                
+                <p class="text-[10px] text-gray-500 uppercase font-black mb-1 italic">1. Select Server Region</p>
+                <select id="region" class="select-pro">
+                    <option value="India">🇮🇳 INDIA REGION</option>
+                    <option value="Bangladesh">🇧🇩 BANGLADESH REGION</option>
+                    <option value="Pakistan">🇵🇰 PAKISTAN REGION</option>
+                    <option value="Nepal">🇳🇵 NEPAL REGION</option>
+                </select>
+
+                <p class="text-[10px] text-gray-500 uppercase font-black mb-1 italic">2. Select Glory Amount</p>
+                <select id="glorySelect" class="select-pro">
+                    <option value="1800">1,800 GLORY (STANDARD)</option>
+                    <option value="5000">5,000 GLORY (ELITE)</option>
+                    <option value="10000">10,000 GLORY (MASTER)</option>
+                    <option value="100000">100,000 GLORY (ULTRA)</option>
+                </select>
+
+                <p class="text-[10px] text-gray-500 uppercase font-black mb-1 italic">3. Guild Information</p>
+                <input type="number" id="targetUid" placeholder="TARGET GUILD UID" class="input-ultra text-xs mb-6">
+
+                <p class="text-[10px] text-gray-500 uppercase font-black mb-3 italic">Squad Credential Management</p>
+                <div class="space-y-4">
+                    <script>
+                        for(let i=1; i<=4; i++) {
+                            document.write(`
+                                <div class="bot-card-500k">
+                                    <div class="flex justify-between items-center mb-3">
+                                        <span class="orbitron text-[10px] text-purple-400 font-bold italic">TITAN_UNIT_0${i}</span>
+                                        <span id="st-${i}" class="text-[8px] text-gray-600">WAITING LOGIN</span>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-2">
+                                        <input type="text" placeholder="Bot ID" class="bg-black border border-purple-900/30 p-2 rounded-lg text-[10px] outline-none">
+                                        <input type="password" placeholder="Pass" class="bg-black border border-purple-900/30 p-2 rounded-lg text-[10px] outline-none">
+                                    </div>
+                                </div>
+                            `);
+                        }
+                    </script>
+                </div>
+            </div>
+
+            <div class="p-6 absolute bottom-0 left-0 w-full bg-black/95 border-t border-purple-900/50">
+                <button onclick="start500K()" id="startBtn" class="btn-500k">INITIALIZE V500K INJECTION</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function unlock() {
+            if(document.getElementById('adminPass').value === "TSRGAMER980") {
+                document.getElementById('authLayer').style.display = 'none';
+                document.getElementById('dashboard').classList.remove('hidden');
+            } else { alert("ACCESS DENIED: KEY INVALID"); }
+        }
+
+        function start500K() {
+            const region = document.getElementById('region').value;
+            const glory = document.getElementById('glorySelect').value;
+            const uid = document.getElementById('targetUid').value;
+            
+            if(!uid) return alert("Please enter Guild UID!");
+
+            const btn = document.getElementById('startBtn');
+            btn.innerText = "INJECTING " + glory + " GLORY...";
+            btn.disabled = true;
+
+            for(let i=1; i<=4; i++) {
+                setTimeout(() => {
+                    document.getElementById(`st-${i}`).innerText = "ACTIVE ON " + region.toUpperCase();
+                    document.getElementById(`st-${i}`).style.color = "#eab308";
+                    if(i === 4) {
+                        btn.innerText = "MISSION SUCCESSFUL ✅";
+                        btn.style.background = "#22c55e";
+                    }
+                }, i * 800);
+            }
+            alert("V500K Squad Deployed to " + region + " Server!");
+        }
+    </script>
+</body>
+</html>
